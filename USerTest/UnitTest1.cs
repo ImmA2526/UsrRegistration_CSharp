@@ -23,5 +23,11 @@ namespace USerTest
             var Result = Usr.LastName("Imran");
             Assert.AreEqual(true, Result);
         }
+        [TestMethod]
+        public void Email_Test()
+        {
+            var Result = Usr.Email("imraninfo.1996@gmail.com");
+            Assert.AreEqual(true, Result);
+        }
     }
 }
