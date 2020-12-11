@@ -8,7 +8,7 @@ namespace UserRegisteration
         public static string Pattern = "^([A-Z]{1})+[a-zA-Z0-9]{2,}$";
         public static string EmailID = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.,-]+$";
         public static string MobileNo = "^[0-9]{2}[ ][0-9]{10}$";
-        public static string Pasword = "^(?=.*[A-Z])[a - zA-Z].{8,}$";
+        public static string Pasword = "^(?=.*[A-Z])[a - zA-Z0-9].{8,}$";
         public bool FirstName(string First_Name)
         {
             Regex Fn = new Regex(Pattern);
