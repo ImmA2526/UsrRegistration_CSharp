@@ -29,5 +29,11 @@ namespace USerTest
             var Result = Usr.Email("imraninfo.1996@gmail.com");
             Assert.AreEqual(true, Result);
         }
+        [TestMethod]
+        public void Mobile_Test()
+        {
+            var Result = Usr.MobileNumber("91 9236789098");
+            Assert.AreEqual(true, Result);
+        }
     }
 }
