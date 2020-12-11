@@ -12,5 +12,11 @@ namespace UserRegisteration
             bool Validate = Fn.IsMatch(First_Name);
             return Validate;
         }
+        public bool LastName(string Last_Name)
+        {
+            Regex Ln = new Regex(Pattern);
+            bool Validate = Ln.IsMatch(Last_Name);
+            return Validate;
+        }
     }
 }

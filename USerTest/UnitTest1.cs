@@ -17,5 +17,11 @@ namespace USerTest
             var Result = Usr.FirstName("Imran");
             Assert.AreEqual(true, Result);
         }
+        [TestMethod]
+        public void LastName_Test()
+        {
+            var Result = Usr.LastName("Imran");
+            Assert.AreEqual(true, Result);
+        }
     }
 }
