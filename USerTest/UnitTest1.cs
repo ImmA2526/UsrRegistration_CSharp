@@ -38,7 +38,7 @@ namespace USerTest
         [TestMethod]
         public void Password_Test()
         {
-            var Result = Usr.Password("qwertyui");
+            var Result = Usr.Password("Qwertyuiq");
             Assert.AreEqual(true, Result);
 
         }
