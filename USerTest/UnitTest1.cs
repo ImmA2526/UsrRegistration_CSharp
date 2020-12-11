@@ -35,5 +35,12 @@ namespace USerTest
             var Result = Usr.MobileNumber("91 9236789098");
             Assert.AreEqual(true, Result);
         }
+        [TestMethod]
+        public void Password_Test()
+        {
+            var Result = Usr.Password("qwertyui");
+            Assert.AreEqual(true, Result);
+
+        }
     }
 }

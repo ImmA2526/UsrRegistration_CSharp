@@ -21,6 +21,9 @@ namespace UserRegisteration
             Console.Write("Enter Mobile Number: ");
             string Mobile_Number = Console.ReadLine();
             Console.WriteLine(Register.MobileNumber(Mobile_Number));
+            Console.Write("Enter Paswrod: ");
+            string Pwd = Console.ReadLine();
+            Console.WriteLine(Register.Password(Pwd));
         }
     }
 }
