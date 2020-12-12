@@ -3,8 +3,9 @@ using System.Text;
 using System.Text.RegularExpressions;
 namespace UserRegisteration
 {
-   public class UserRegister
+    public class UserRegister
     {
+        public static string Message = "Happy";
         public static string Pattern = "^([A-Z]{1})+[a-zA-Z0-9]{2,}$";
         public static string EmailID = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.,-]+$";
         public static string MobileNo = "^[0-9]{2}[ ][0-9]{10}$";
@@ -37,6 +38,12 @@ namespace UserRegisteration
         {
             Regex Pw = new Regex(Pasword);
             bool Validate = Pw.IsMatch(Pwd);
+            return Validate;
+        }
+        public bool MessageCheck(string Msg)
+        {
+            Regex Ms = new Regex(Message);
+            bool Validate = Ms.IsMatch(Msg);
             return Validate;
         }
     }

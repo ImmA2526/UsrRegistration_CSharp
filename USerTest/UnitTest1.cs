@@ -42,5 +42,11 @@ namespace USerTest
             Assert.AreEqual(true, Result);
 
         }
+        [TestMethod]
+        public void Happy_Test()
+        {
+            var Result = Usr.MessageCheck("Happy");
+            Assert.AreEqual(true,Result);
+        }
     }
 }
