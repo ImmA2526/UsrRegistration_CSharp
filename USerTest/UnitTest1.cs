@@ -57,6 +57,71 @@ namespace USerTest
             var Result = Mail.CheckMultipleEmail("imraninfo.1996@gmail.com", "abc-100@yahoo.com", "abcd12@gmail.com");
             Assert.AreEqual(Result, "Entry is Succesfull");
         }
-       
+
+        [TestMethod]
+        [DataRow("imran")]
+        public void InvalidName_TrowException(string FirstName)
+        {
+            try
+            {
+                Check.FirstName(FirstName);
+            }
+            catch (CustomException Exception)
+            {
+                Assert.AreEqual("Invalid First Name",Exception.Message);
+            }
+        }
+        [TestMethod]
+        [DataRow("shaikh")]
+        public  void InvalidLastName_TrowException(string LastName)
+        {
+            try
+            {
+                Check.LastName(LastName);
+            }
+            catch (CustomException Exception)
+            {
+                Assert.AreEqual("Invalid LastName", Exception.Message);
+            }
+        }
+        [TestMethod]
+        [DataRow("imraninfo@gmail.com")]
+        public void InvalidEmail_ThrowException(string Email)
+        {
+            try
+            {
+                Check.Email(Email);
+            }
+            catch (CustomException Exception)
+            {
+                Assert.AreEqual("Invalid Email",Exception.Message);
+            }
+        }
+        [TestMethod]
+        [DataRow("91 123456766")]
+        public void InvalidMobileNo_TrowException(string MobileNo)
+        {
+            try
+            {
+                Check.MobileNumber(MobileNo);
+            }
+            catch (CustomException Exception)
+            {
+                Assert.AreEqual("Invalid Mobile No", Exception.Message);
+            }
+        }
+        [TestMethod]
+        [DataRow("12Q35abcd")]
+        public void InvalidPassword_TrhowException(string Password)
+        {
+            try
+            {
+                Check.Password(Password);
+            }
+            catch (CustomException Exception)
+            {
+                Assert.AreEqual("Invalid Password",Exception.Message);
+            }
+        }
     }
 }
