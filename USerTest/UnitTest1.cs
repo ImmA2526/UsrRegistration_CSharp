@@ -5,6 +5,7 @@ namespace USerTest
     [TestClass]
     public class UnitTest1
     {
+        UserRegister Check = new UserRegister();
         private readonly UserRegister Usr;
        
         public  UnitTest1()
@@ -48,5 +49,14 @@ namespace USerTest
             var Result = Usr.MessageCheck("Happy");
             Assert.AreEqual(true,Result);
         }
+        
+        [TestMethod]
+        public void MultipleMail()
+        {
+            UserRegister Mail = new UserRegister();
+            var Result = Mail.CheckMultipleEmail("imraninfo.1996@gmail.com", "abc-100@yahoo.com", "abcd12@gmail.com");
+            Assert.AreEqual(Result, "Entry is Succesfull");
+        }
+       
     }
 }

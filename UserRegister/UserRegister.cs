@@ -46,5 +46,19 @@ namespace UserRegisteration
             bool Validate = Ms.IsMatch(Msg);
             return Validate;
         }
+        /// <summary>
+        /// Checks the multiple email with parameterised.
+       
+        public string CheckMultipleEmail(string Mail1, string Mail2, string Mail3)
+        {
+            UserRegister Mail = new UserRegister();
+            bool MailEntry1 = Mail.Email(Mail1);
+            bool MailEntry2 = Mail.Email(Mail2);
+            bool MailEntry3 = Mail.Email(Mail3);
+            if (MailEntry1 && MailEntry2 && MailEntry3)
+                return "Entry is Succesfull";
+            else
+                return "Entry is Fail";
+        }
     }
 }
