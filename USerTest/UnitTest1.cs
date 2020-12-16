@@ -6,55 +6,66 @@ namespace USerTest
     public class UnitTest1
     {
         UserRegister Check = new UserRegister();
-        private readonly UserRegister Usr;
-       
+        private readonly UserRegister User;
         public  UnitTest1()
         {
-             Usr = new UserRegister();   
+             User = new UserRegister();   
         }
+
         [TestMethod]
         public void FirstName_Test()
         {
-            var Result = Usr.FirstName("Imran");
+            var Result = User.FirstName("Imran");
             Assert.AreEqual(true, Result);
         }
+
         [TestMethod]
         public void LastName_Test()
         {
-            var Result = Usr.LastName("Imran");
+            var Result = User.LastName("Imran");
             Assert.AreEqual(true, Result);
         }
+
+        /// <summary>
+        /// Emails the test.
+        /// </summary>
         [TestMethod]
         public void Email_Test()
         {
-            var Result = Usr.Email("imraninfo.1996@gmail.com");
+            var Result = User.Email("imraninfo.1996@gmail.com");
             Assert.AreEqual(true, Result);
         }
+
         [TestMethod]
         public void Mobile_Test()
         {
-            var Result = Usr.MobileNumber("91 9236789098");
+            var Result = User.MobileNumber("91 9236789098");
             Assert.AreEqual(true, Result);
         }
+
         [TestMethod]
         public void Password_Test()
         {
-            var Result = Usr.Password("Qwertyuiq1*");
+            var Result = User.Password("Qwertyuiq1*");
             Assert.AreEqual(true, Result);
 
         }
+
         [TestMethod]
         public void Happy_Test()
         {
-            var Result = Usr.MessageCheck("Happy");
+            var Result = User.MessageCheck("Happy");
             Assert.AreEqual(true,Result);
         }
         
+
         [TestMethod]
-        public void MultipleMail()
+        [DataRow("imraninfo.1996@gmail.com")]
+        [DataRow("nijamsayyad123@gmail.com")]
+        public void MultipleMail(string mail)
         {
             UserRegister Mail = new UserRegister();
-            var Result = Mail.CheckMultipleEmail("imraninfo.1996@gmail.com", "abc-100@yahoo.com", "abcd12@gmail.com");
+            var Result = Mail.CheckMultipleEmail(mail);
             Assert.AreEqual(Result, "Entry is Succesfull");
         }
 
@@ -122,6 +133,44 @@ namespace USerTest
             {
                 Assert.AreEqual("Invalid Password",Exception.Message);
             }
+        }
+
+        /// <summary>
+        /// Firsts the name using lambda expression.
+        /// </summary>
+        [TestMethod]
+        public void FirstNameUsingLambdaExpression()
+        {
+            var Result = User.FirstName("Imran");
+            Assert.AreEqual(true, Result);
+        }
+
+        [TestMethod]
+        public void LastNAmeUsingLambdaExpression()
+        {
+            var Result = User.LastName("Shaikh");
+            Assert.AreEqual(true, Result);
+        }
+
+        [TestMethod]
+        public void EmailUsingLambdaExpression()
+        {
+            var Result = User.Email("imraninfo.1996@gmail.com");
+            Assert.AreEqual(true, Result);
+        }
+
+        [TestMethod]
+        public void MobileNumberUsingLabdaExpression()
+        {
+            var Result = User.MobileNumber("91 9175833272");
+            Assert.AreEqual(true, Result);
+        }
+
+        [TestMethod]
+        public void PasswordUingLambdaExpression()
+        {
+            var Result = User.Password("Qwerty@123");
+            Assert.AreEqual(true, Result);
         }
     }
 }

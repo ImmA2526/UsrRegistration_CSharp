@@ -24,6 +24,7 @@ namespace UserRegisteration
             Console.Write("Enter Paswrod: ");
             string Pwd = Console.ReadLine();
             Console.WriteLine(Register.Password(Pwd));
+            
         }
     }
 }

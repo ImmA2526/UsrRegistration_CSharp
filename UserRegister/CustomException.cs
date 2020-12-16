@@ -12,7 +12,8 @@ namespace UserRegisteration
             INVALID_LastName,
             INVALID_EmailId,
             INVALID_Zip,
-            INVALID_MobileNo
+            INVALID_MobileNo,
+            INVALID_Password
         }
         private readonly ExceptionType Type;
         public CustomException(ExceptionType Type, string Message) : base(Message)
